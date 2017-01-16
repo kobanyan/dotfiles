@@ -59,7 +59,7 @@ set mousefocus " the window with the mouse pointer becomes the current one
 "
 " 10 GUI
 "
-set guifont="Source Code Pro for Powerline"
+set guifont="Ricty Diminished Regular for Powerline"
 " set transparency=50 " transparency of the text background as a percent
 
 "
