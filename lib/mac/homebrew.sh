@@ -9,7 +9,8 @@ fi
 if hash brew 2>/dev/null; then
   log_warn "homebrew is already installed."
 else
-  ruby -e `curl -fsSL $HOMEBREW_URL`
+  log_info "Installing homebrew..."
+  ruby -e "$(curl -fsSL $HOMEBREW_URL)"
   if [ $? != 0 ]; then
     log_error "Failed to install homebrew."
     exit 1

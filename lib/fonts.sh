@@ -23,7 +23,7 @@ for (( i = 0; i < ${#FONT_NAMES[@]}; ++i ))
 do
   font_name=${FONT_NAMES[$i]}
   log_info "Installing font: $font_name ..."
-  curl -sLo "$FONTS_DIR$font_name" "${FONT_URLS[$i]}"
+  curl -sLo "$FONTS_DIR$font_name" "${FONT_URLS[$i]}" --create-dirs
 done
 
 # associative array is not supported mac?
