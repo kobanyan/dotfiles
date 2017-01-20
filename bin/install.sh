@@ -72,3 +72,5 @@ case `uname` in
   "Linux"  )
     source "$DOTFILES_HOME/lib/linux/post_install.sh";;
 esac
+
+log_info "Finished install process."
