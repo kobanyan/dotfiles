@@ -50,7 +50,7 @@ function check_if_do_preinstall() {
 
 # -----------------------------------------------------------------------------
 
-log_info "Starting precheck..."
+log_info "Start precheck..."
 case `uname` in
   "Darwin" )
     check_if_do_preinstall ${REQUIRED_PACKAGES_MAC[@]}
@@ -72,6 +72,8 @@ case `uname` in
 esac
 log_info "Finished precheck."
 
+log_info "Start to setup..."
+
 log_info "Cloning $DOTFILES_REPO to $DOTFILES_HOME"
 if [ -d "$DOTFILES_HOME/.git" ] || git -C $DOTFILES_HOME rev-parse --git-dir >/dev/null 2>&1; then
   git -C $DOTFILES_HOME pull
@@ -84,9 +86,6 @@ case `uname` in
     source "$DOTFILES_HOME/lib/mac/install.sh";;
   "Linux"  )
     source "$DOTFILES_HOME/lib/linux/install.sh";;
-  "*"      )
-    log_error "Not supported."
-    exit 1;;
 esac
 
 source "$DOTFILES_HOME/lib/fonts.sh"
@@ -98,4 +97,4 @@ case `uname` in
     source "$DOTFILES_HOME/lib/linux/post_install.sh";;
 esac
 
-log_info "Finished install process."
+log_info "Finished setup."
