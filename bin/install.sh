@@ -32,7 +32,7 @@ case `uname` in
   "Darwin" )
     check_if_do_preinstall ${REQUIRED_PACKAGES_MAC[@]}
     if [ "$do_preinstall" == "true" ]; then
-      echo "Required packages do not exist! Can not install!" 
+      echo "Required packages do not exist! Can not install!"
       exit 1
     fi;;
   "Linux"  )
@@ -45,26 +45,30 @@ case `uname` in
 esac
 echo "Finished precheck."
 
-# clone repository
-git clone $DOTFILES_REPO $DOTFILES_HOME
+echo "Cloning $DOTFILES_REPO to $DOTFILES_HOME"
+if [ -d "$DOTFILES_HOME/.git" ] || git -C $DOTFILES_HOME rev-parse --git-dir >/dev/null 2>&1; then
+  git -C $DOTFILES_HOME pull
+else
+  git clone $DOTFILES_REPO $DOTFILES_HOME
+fi
 
 source "$DOTFILES_HOME/lib/utils.sh"
 
 case `uname` in
-  "Darwin" ) 
+  "Darwin" )
     source "$DOTFILES_HOME/lib/mac/install.sh";;
-  "Linux"  ) 
+  "Linux"  )
     source "$DOTFILES_HOME/lib/linux/install.sh";;
   "*"      )
-    log_error "Not supported." 
+    log_error "Not supported."
     exit 1;;
-esac 
+esac
 
 source "$DOTFILES_HOME/lib/fonts.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
 source "$DOTFILES_HOME/lib/dotfiles.sh"
 
 case `uname` in
-  "Linux"  ) 
+  "Linux"  )
     source "$DOTFILES_HOME/lib/linux/post_install.sh";;
-esac 
+esac
