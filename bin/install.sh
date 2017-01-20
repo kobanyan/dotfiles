@@ -18,8 +18,9 @@ REQUIRED_PACKAGES_LINUX=(
 
 # -----------------------------------------------------------------------------
 
-COLOR_ERROR="\033[1;31m"
-COLOR_WARN="\033[1;33m"
+COLOR_INFO="\033[34;1m"
+COLOR_ERROR="\033[31;1m"
+COLOR_WARN="\033[33;1m"
 COLOR_RESET="\033[0m"
 
 function now() {
@@ -27,7 +28,7 @@ function now() {
 }
 
 function log_info() {
-  echo -e "`now` [INFO] $@"
+  echo -e "$COLOR_INFO`now` [INFO] $@$COLOR_RESET"
 }
 
 function log_warn() {
