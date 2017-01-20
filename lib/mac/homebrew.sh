@@ -1,16 +1,11 @@
 #!/bin/bash
 
-if [ -z "$HOMEBREW_URL" ]; then
-  log_error '$HOMEBREW_URL is undefined.'
-  exit 1
-fi
-
 # Install homebrew
 if hash brew 2>/dev/null; then
   log_warn "homebrew is already installed."
 else
   log_info "Installing homebrew..."
-  ruby -e "$(curl -fsSL $HOMEBREW_URL)"
+  ruby -e "$(curl -fsSL ${HOMEBREW_URL:?})"
   if [ $? != 0 ]; then
     log_error "Failed to install homebrew."
     exit 1
