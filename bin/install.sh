@@ -59,11 +59,15 @@ case `uname` in
       exit 1
     fi;;
   "Linux"  )
-    check_if_do_preinstall ${REQUIRED_PACKAGES_LINUX[@]}
-    if [ "$do_preinstall" == "true" ]; then
-      log_info "Installing required packages with package manager..."
-      sudo apt update
-      sudo apt install -y  ${REQUIRED_PACKAGES_LINUX[*]}
+    if [ -f /etc/lsb-release ]; then
+      check_if_do_preinstall ${REQUIRED_PACKAGES_LINUX[@]}
+      if [ "$do_preinstall" == "true" ]; then
+        log_info "Installing required packages with package manager..."
+        sudo apt update
+        sudo apt install -y  ${REQUIRED_PACKAGES_LINUX[*]}
+      fi
+    else
+      log_error "Not supported Linux distribution!"
     fi;;
 esac
 log_info "Finished precheck."
