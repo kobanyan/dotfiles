@@ -3,7 +3,7 @@
 DOTFILES_REPO="https://github.com/kobanyan/dotfiles"
 DOTFILES_HOME="$HOME/src/github.com/kobanyan/dotfiles"
 
-REQUIRED_PACKAGES_MAC=(
+REQUIRED_PACKAGES_OSX=(
   curl
   git
   ruby
@@ -53,7 +53,7 @@ function check_if_do_preinstall() {
 log_info "Start precheck..."
 case `uname` in
   "Darwin" )
-    check_if_do_preinstall ${REQUIRED_PACKAGES_MAC[@]}
+    check_if_do_preinstall ${REQUIRED_PACKAGES_OSX[@]}
     if [ "$do_preinstall" == "true" ]; then
       log_error "Required packages do not exist! Can not install!"
       exit 1
@@ -83,7 +83,7 @@ fi
 
 case `uname` in
   "Darwin" )
-    source "$DOTFILES_HOME/lib/mac/install.sh";;
+    source "$DOTFILES_HOME/lib/osx/install.sh";;
   "Linux"  )
     source "$DOTFILES_HOME/lib/linux/install.sh";;
 esac

@@ -11,7 +11,7 @@ do
   curl -sLo "${FONTS_DIR:?}$font_name" "${FONT_URLS[$i]}" --create-dirs
 done
 
-# associative array is not supported mac?
+# associative array is not supported osx?
 # for font_name in ${!FONTS[@]}; do
 #   echo curl -sLo "$FONTS_DIR/$font_name" "${FONTS[$font_name]}"
 # done
