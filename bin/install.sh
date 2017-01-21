@@ -89,6 +89,7 @@ case `uname` in
 esac
 
 source "$DOTFILES_HOME/lib/fonts.sh"
+source "$DOTFILES_HOME/lib/nvm.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
 source "$DOTFILES_HOME/lib/code.sh"
 source "$DOTFILES_HOME/lib/vim-plug.sh"
