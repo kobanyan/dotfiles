@@ -2,14 +2,10 @@
 
 # set -x GOPATH "$HOME/.go"
 # set -x PATH $PATH $GOPATH/bin
-# if test (uname) = "Darwin"
-#  set -x PYENV_ROOT "/usr/local/var/pyenv"
-# else
-#   set -x PATH "$HOME/.pyenv/bin" $PATH
-# end
-# status --is-interactive;
-#   and source (pyenv init - | psub);
-#     and source (pyenv virtualenv-init - | psub)
+set -x PATH "$HOME/.pyenv/bin" $PATH
+status --is-interactive;
+  and source (pyenv init - | psub);
+    and source (pyenv virtualenv-init - | psub)
 
 # gi update-completions &
 # theme

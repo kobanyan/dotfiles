@@ -3,4 +3,5 @@
 set -g FISHER_PLUGINS \
   z \
   nvm \
+  pyenv \
   kobanyan/bullet-train-fish-theme
