@@ -11,3 +11,5 @@ status --is-interactive;
 # theme
 set -g BULLETTRAIN_NODEJS_SHOW true
 # set -g BULLETTRAIN_GO_SHOW true
+
+set -g GBD_SELECTOR fzf
