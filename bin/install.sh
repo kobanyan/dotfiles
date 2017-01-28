@@ -94,6 +94,7 @@ source "$DOTFILES_HOME/lib/pyenv.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
 source "$DOTFILES_HOME/lib/code.sh"
 source "$DOTFILES_HOME/lib/vim-plug.sh"
+source "$DOTFILES_HOME/lib/ghr.sh"
 source "$DOTFILES_HOME/lib/dotfiles.sh"
 
 case `uname` in
