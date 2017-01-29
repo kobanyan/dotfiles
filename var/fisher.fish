@@ -6,4 +6,4 @@ set -g FISHER_PLUGINS \
   pyenv \
   kobanyan/bullet-train-fish-theme \
   kobanyan/ghr \
-  kobanyan/gbd
+  kobanyan/gbs

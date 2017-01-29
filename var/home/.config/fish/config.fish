@@ -12,4 +12,4 @@ status --is-interactive;
 set -g BULLETTRAIN_NODEJS_SHOW true
 # set -g BULLETTRAIN_GO_SHOW true
 
-set -g GBD_SELECTOR fzf
+set -g GBS_SELECTOR fzf
