@@ -5,7 +5,9 @@ source "${DOTFILES_HOME:?}/var/linux/apt.sh"
 # Install PPAs
 log_info "Installing additional repositories..."
 if [ ${#PPAS[@]} -gt 0 ]; then
-  sudo add-apt-repository -y ${PPAS[*]}
+  for ppa in "${PPAS[@]}"; do
+    sudo add-apt-repository -y $ppa
+  done
 else
   log_warn "There are no additional repositories."
 fi
