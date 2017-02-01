@@ -49,25 +49,37 @@ function check_if_do_preinstall() {
 }
 
 # -----------------------------------------------------------------------------
-
 log_info "Start precheck..."
+
 case `uname` in
-  "Darwin" )
+  "Darwin" ) OS="osx";;
+  "Linux"  )
+    if [[ -f /proc/sys/kernel/osrelease && -n $(cat /proc/sys/kernel/osrelease | grep Microsoft) ]]; then
+      OS="win"
+    else
+      if [ -f /etc/lsb-release ]; then
+        OS="linux"
+      else
+        log_error "Not supported Linux distribution!"
+        exit 1
+      fi
+    fi;;
+esac
+log_info "OS = $OS"
+
+case "$OS" in
+  "osx" )
     check_if_do_preinstall ${REQUIRED_PACKAGES_OSX[@]}
     if [ "$do_preinstall" == "true" ]; then
       log_error "Required packages do not exist! Can not install!"
       exit 1
     fi;;
-  "Linux"  )
-    if [ -f /etc/lsb-release ]; then
-      check_if_do_preinstall ${REQUIRED_PACKAGES_LINUX[@]}
-      if [ "$do_preinstall" == "true" ]; then
-        log_info "Installing required packages with package manager..."
-        sudo apt update
-        sudo apt install -y  ${REQUIRED_PACKAGES_LINUX[*]}
-      fi
-    else
-      log_error "Not supported Linux distribution!"
+  "linux" | "win"  )
+    check_if_do_preinstall ${REQUIRED_PACKAGES_LINUX[@]}
+    if [ "$do_preinstall" == "true" ]; then
+      log_info "Installing required packages with package manager..."
+      sudo apt update
+      sudo apt install -y  ${REQUIRED_PACKAGES_LINUX[*]}
     fi;;
 esac
 log_info "Finished precheck."
@@ -81,11 +93,13 @@ else
   git clone $DOTFILES_REPO $DOTFILES_HOME
 fi
 
-case `uname` in
-  "Darwin" )
+case "$OS" in
+  "osx" )
     source "$DOTFILES_HOME/lib/osx/install.sh";;
-  "Linux"  )
+  "linux" )
     source "$DOTFILES_HOME/lib/linux/install.sh";;
+  "win" )
+    source "$DOTFILES_HOME/lib/win/install.sh";;
 esac
 
 source "$DOTFILES_HOME/lib/fonts.sh"
