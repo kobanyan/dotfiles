@@ -2,6 +2,7 @@
 
 PPAS=(
   "ppa:ubuntu-desktop/ubuntu-make"
+  "ppa:fish-shell/release-2"
 )
 
 PACKAGES=(
