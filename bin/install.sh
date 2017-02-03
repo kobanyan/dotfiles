@@ -110,8 +110,8 @@ source "$DOTFILES_HOME/lib/vim-plug.sh"
 source "$DOTFILES_HOME/lib/ghr.sh"
 source "$DOTFILES_HOME/lib/dotfiles.sh"
 
-case `uname` in
-  "Linux"  )
+case "$OS" in
+  "linux" )
     source "$DOTFILES_HOME/lib/linux/post_install.sh";;
 esac
 
