@@ -102,7 +102,6 @@ case "$OS" in
     source "$DOTFILES_HOME/lib/win/install.sh";;
 esac
 
-source "$DOTFILES_HOME/lib/fonts.sh"
 source "$DOTFILES_HOME/lib/nvm.sh"
 source "$DOTFILES_HOME/lib/pyenv.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
