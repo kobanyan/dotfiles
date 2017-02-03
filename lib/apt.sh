@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source "${DOTFILES_HOME:?}/var/linux/apt.sh"
-
 # Install PPAs
 log_info "Installing additional repositories..."
 if [ ${#PPAS[@]} -gt 0 ]; then

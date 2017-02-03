@@ -26,4 +26,5 @@ PACKAGES=(
   llvm # pyenv
   libncurses5-dev # pyenv
   xz-utils
+  zip # ghr
 )
