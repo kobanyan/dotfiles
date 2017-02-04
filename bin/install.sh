@@ -87,8 +87,8 @@ case "$OS" in
     if [ "$do_preinstall" == "true" ]; then
       log_info "Installing required packages with package manager..."
       sudo apt update
-      sudo apt install -y  ${REQUIRED_PACKAGES_LINUX[*]}
-    fi;;
+      sudo apt install -y ${REQUIRED_PACKAGES_LINUX[*]}
+    fi
 esac
 log_info "Finished precheck."
 
