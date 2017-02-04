@@ -39,6 +39,14 @@ function log_error() {
   echo -e "$COLOR_ERROR`now` [ERROR] $@$COLOR_RESET"
 }
 
+function git_clone_or_pull() {
+  if [ -d "$2/.git" ] || git -C $2 rev-parse --git-dir >/dev/null 2>&1; then
+    git -C $2 pull
+  else
+    git clone $1 $2
+  fi
+}
+
 function check_if_do_preinstall() {
   local packages=($@)
   for p in ${packages[@]}; do
@@ -87,11 +95,7 @@ log_info "Finished precheck."
 log_info "Start to setup..."
 
 log_info "Cloning $DOTFILES_REPO to $DOTFILES_HOME"
-if [ -d "$DOTFILES_HOME/.git" ] || git -C $DOTFILES_HOME rev-parse --git-dir >/dev/null 2>&1; then
-  git -C $DOTFILES_HOME pull
-else
-  git clone $DOTFILES_REPO $DOTFILES_HOME
-fi
+git_clone_or_pull $DOTFILES_REPO $DOTFILES_HOME
 
 case "$OS" in
   "osx" )
@@ -104,6 +108,7 @@ esac
 
 source "$DOTFILES_HOME/lib/nvm.sh"
 source "$DOTFILES_HOME/lib/pyenv.sh"
+source "$DOTFILES_HOME/lib/rbenv.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
 source "$DOTFILES_HOME/lib/vim-plug.sh"
 source "$DOTFILES_HOME/lib/ghr.sh"
