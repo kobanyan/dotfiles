@@ -60,8 +60,10 @@ function check_if_do_preinstall() {
 log_info "Start precheck..."
 
 case `uname` in
-  "Darwin" ) OS="osx";;
-  "Linux"  )
+  "Darwin")
+    OS="osx"
+    ;;
+  "Linux")
     if [[ -f /proc/sys/kernel/osrelease && -n $(cat /proc/sys/kernel/osrelease | grep Microsoft) ]]; then
       OS="win"
     else
@@ -71,24 +73,33 @@ case `uname` in
         log_error "Not supported Linux distribution!"
         exit 1
       fi
-    fi;;
+    fi
+    ;;
+  *)
+    log_error "Not supported OS! `uname`"
+    exit 1
 esac
 log_info "OS = $OS"
 
 case "$OS" in
-  "osx" )
+  "osx")
     check_if_do_preinstall ${REQUIRED_PACKAGES_OSX[@]}
     if [ "$do_preinstall" == "true" ]; then
       log_error "Required packages do not exist! Can not install!"
       exit 1
-    fi;;
-  "linux" | "win"  )
+    fi
+    ;;
+  "linux" | "win")
     check_if_do_preinstall ${REQUIRED_PACKAGES_LINUX[@]}
     if [ "$do_preinstall" == "true" ]; then
       log_info "Installing required packages with package manager..."
       sudo apt update
       sudo apt install -y ${REQUIRED_PACKAGES_LINUX[*]}
     fi
+    ;;
+  *)
+    log_error "Unknown OS! $OS"
+    exit 1
 esac
 log_info "Finished precheck."
 
@@ -98,12 +109,18 @@ log_info "Cloning $DOTFILES_REPO to $DOTFILES_HOME"
 git_clone_or_pull $DOTFILES_REPO $DOTFILES_HOME
 
 case "$OS" in
-  "osx" )
-    source "$DOTFILES_HOME/lib/osx/install.sh";;
-  "linux" )
-    source "$DOTFILES_HOME/lib/linux/install.sh";;
-  "win" )
-    source "$DOTFILES_HOME/lib/win/install.sh";;
+  "osx")
+    source "$DOTFILES_HOME/lib/osx/install.sh"
+    ;;
+  "linux")
+    source "$DOTFILES_HOME/lib/linux/install.sh"
+    ;;
+  "win")
+    source "$DOTFILES_HOME/lib/win/install.sh"
+    ;;
+  *)
+    log_error "Unknown OS! $OS"
+    exit 1
 esac
 
 source "$DOTFILES_HOME/lib/nvm.sh"
@@ -115,8 +132,11 @@ source "$DOTFILES_HOME/lib/ghr.sh"
 source "$DOTFILES_HOME/lib/dotfiles.sh"
 
 case "$OS" in
-  "linux" )
-    source "$DOTFILES_HOME/lib/linux/post_install.sh";;
+  "linux")
+    source "$DOTFILES_HOME/lib/linux/post_install.sh"
+    ;;
+  *)
+    log_info "$OS has not post install process"
 esac
 
 log_info "Finished setup."
