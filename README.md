@@ -3,8 +3,8 @@
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kobanyan/dotfiles/master/bin/install.sh | bash
-wget -qO https://raw.githubusercontent.com/kobanyan/dotfiles/master/bin/install.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/kobanyan/dotfiles/master/bin/install.sh)"
+bash -c "$(wget -qO - https://raw.githubusercontent.com/kobanyan/dotfiles/master/bin/install.sh)"
 ```
 
 ## Test
