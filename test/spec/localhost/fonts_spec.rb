@@ -10,7 +10,7 @@ if os[:family] == "darwin"
       it { should be_file }
     end
   end
-elsif ["ubuntu"].include?(os[:family]) && ubuntu_has_desktop
+elsif ["ubuntu"].include?(os[:family]) && has_ubuntu_desktop
   fonts.each do |f|
     describe file("#{ENV['HOME']}/.fonts/#{f}") do
       it { should be_file }
