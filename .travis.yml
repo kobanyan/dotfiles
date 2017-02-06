@@ -1,13 +1,13 @@
 language: ruby
 matrix:
   include:
-    - os: linux
-      dist: trusty
-      sudo: required
-      before_install:
-        # remove postgresql ppa to install ubuntu-make
-        - sudo rm -rf /etc/apt/sources.list.d/pgdg.list
-        - sudo apt update
+    # - os: linux
+    #   dist: trusty
+    #   sudo: required
+    #   before_install:
+    #     # remove postgresql ppa to install ubuntu-make
+    #     - sudo rm -rf /etc/apt/sources.list.d/pgdg.list
+    #     - sudo apt update
     - os: osx
       osx_image: xcode8
 install:
