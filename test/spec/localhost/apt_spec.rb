@@ -1,7 +1,6 @@
 require "spec_helper"
 
 ppas=[
-  "ubuntu-desktop/ubuntu-make",
   "fish-shell/release-2",
 ]
 
@@ -9,11 +8,8 @@ packages=[
   "fish",
   "vim",
   "tmux",
-  "chromium-browser",
   "virtualbox",
   "docker",
-  "ubuntu-make",
-  "libgconf-2-4",
   "make",
   "build-essential",
   "libssl-dev",
@@ -29,7 +25,21 @@ packages=[
   "zip",
 ]
 
+desktop_ppas=[
+  "ubuntu-desktop/ubuntu-make",
+]
+
+desktop_packages=[
+  "chromium-browser",
+  "ubuntu-make",
+  "libgconf-2-4",
+]
+
 if ["ubuntu"].include?(os[:family])
+  if has_ubuntu_desktop then
+    ppas.concat(desktop_ppas)
+    packages.concat(desktop_packages)
+  end
   ppas.each do |p|
     describe ppa(p) do
       it { should exist }

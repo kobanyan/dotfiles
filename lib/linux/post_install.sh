@@ -2,5 +2,7 @@
 
 log_info "Start post install process to linux..."
 
-# recreate font cache
-fc-cache -f -v
+if [ "$has_desktop" == "true" ]; then
+  # recreate font cache
+  fc-cache -f -v
+fi

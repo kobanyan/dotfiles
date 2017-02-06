@@ -6,7 +6,9 @@ source "${DOTFILES_HOME:?}/var/linux/directories.sh"
 source "$DOTFILES_HOME/var/linux/apt.sh"
 
 source "$DOTFILES_HOME/lib/apt.sh"
-source "$DOTFILES_HOME/lib/fonts.sh"
 
-source "$DOTFILES_HOME/lib/linux/umake.sh"
-source "$DOTFILES_HOME/lib/code.sh"
+if [ "$has_desktop" == "true" ]; then
+  source "$DOTFILES_HOME/lib/fonts.sh"
+  source "$DOTFILES_HOME/lib/linux/umake.sh"
+  source "$DOTFILES_HOME/lib/code.sh"
+fi

@@ -81,6 +81,13 @@ case `uname` in
 esac
 log_info "OS = $OS"
 
+if [ "$OS" == "linux" ]; then
+  if [[ $(dpkg --get-selections | grep -q desktop) ]]; then
+    has_desktop="true"
+  fi
+  echo "has_desktop = $has_desktop"
+fi
+
 case "$OS" in
   "osx")
     check_if_do_preinstall ${REQUIRED_PACKAGES_OSX[@]}
