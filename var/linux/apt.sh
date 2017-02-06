@@ -9,6 +9,8 @@ PACKAGES=(
   vim
   tmux
   docker
+  virtualbox
+  vagrant
   make # pyenv
   build-essential # pyenv
   libssl-dev # pyenv
@@ -30,7 +32,6 @@ if [ "$has_desktop" == "true" ]; then
   )
   PACKAGES+=(
     chromium-browser
-    virtualbox
     ubuntu-make
     libgconf-2-4 # visual-studio-code
   )

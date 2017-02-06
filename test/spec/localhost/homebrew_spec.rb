@@ -14,6 +14,7 @@ casks = [
   "docker-toolbox",
   "visual-studio-code",
   "iterm2",
+  "vagrant",
 ]
 
 if os[:family] == "darwin"

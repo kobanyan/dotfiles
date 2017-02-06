@@ -14,4 +14,5 @@ CASKS=(
   docker-toolbox
   visual-studio-code
   iterm2
+  vagrant
 )
