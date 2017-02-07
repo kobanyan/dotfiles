@@ -9,7 +9,7 @@ packages=[
   "vim",
   "tmux",
   "virtualbox",
-  "vagrant"
+  "vagrant",
   "docker",
   "make",
   "build-essential",
