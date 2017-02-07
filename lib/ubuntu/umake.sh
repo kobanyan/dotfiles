@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "${DOTFILES_HOME:?}/var/linux/umake.sh"
+source "${DOTFILES_HOME:?}/var/ubuntu/umake.sh"
 
 # Install umake packages
 log_info "Installing umake packages..."

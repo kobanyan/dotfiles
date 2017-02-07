@@ -9,7 +9,7 @@ REQUIRED_PACKAGES_OSX=(
   ruby
 )
 
-REQUIRED_PACKAGES_LINUX=(
+REQUIRED_PACKAGES_UBUNTU=(
   curl
   git
   software-properties-common
@@ -64,15 +64,22 @@ case `uname` in
     OS="osx"
     ;;
   "Linux")
-    if [[ -f /proc/sys/kernel/osrelease && -n $(cat /proc/sys/kernel/osrelease | grep Microsoft) ]]; then
-      OS="win"
-    else
-      if [ -f /etc/lsb-release ]; then
-        OS="linux"
+    if cat /etc/debian_version > /dev/null &2> /dev/null; then
+      if [[ -f /proc/sys/kernel/osrelease && -n $(cat /proc/sys/kernel/osrelease | grep Microsoft) ]]; then
+        OS="uow"
       else
-        log_error "Not supported Linux distribution!"
-        exit 1
+        if hash lsb_release &2> /dev/null; then
+          OS=$(lsb_release -i | cut -f2)
+          OS=${OS,,}
+          if dpkg --get-selections | grep -q "$OS-desktop"; then
+            has_desktop="true"
+          fi
+        fi
       fi
+    fi
+    if [ "$OS" == "" ]; then
+      log_error "Not supported Linux distribution!"
+      exit 1
     fi
     ;;
   *)
@@ -80,13 +87,7 @@ case `uname` in
     exit 1
 esac
 log_info "OS = $OS"
-
-if [ "$OS" == "linux" ]; then
-  if [[ $(dpkg --get-selections | grep -q desktop) ]]; then
-    has_desktop="true"
-  fi
-  echo "has_desktop = $has_desktop"
-fi
+log_info "has_desktop = $has_desktop"
 
 case "$OS" in
   "osx")
@@ -96,12 +97,12 @@ case "$OS" in
       exit 1
     fi
     ;;
-  "linux" | "win")
-    check_if_do_preinstall ${REQUIRED_PACKAGES_LINUX[@]}
+  "ubuntu" | "elementary" | "uow")
+    check_if_do_preinstall ${REQUIRED_PACKAGES_UBUNTU[@]}
     if [ "$do_preinstall" == "true" ]; then
       log_info "Installing required packages with package manager..."
       sudo apt update
-      sudo apt install -y ${REQUIRED_PACKAGES_LINUX[*]}
+      sudo apt install -y ${REQUIRED_PACKAGES_UBUNTU[*]}
     fi
     ;;
   *)
@@ -119,11 +120,8 @@ case "$OS" in
   "osx")
     source "$DOTFILES_HOME/lib/osx/install.sh"
     ;;
-  "linux")
-    source "$DOTFILES_HOME/lib/linux/install.sh"
-    ;;
-  "win")
-    source "$DOTFILES_HOME/lib/win/install.sh"
+  "ubuntu" | "elementary" | "uow")
+    source "$DOTFILES_HOME/lib/ubuntu/install.sh"
     ;;
   *)
     log_error "Unknown OS! $OS"
@@ -139,11 +137,8 @@ source "$DOTFILES_HOME/lib/ghr.sh"
 source "$DOTFILES_HOME/lib/dotfiles.sh"
 
 case "$OS" in
-  "linux")
-    source "$DOTFILES_HOME/lib/linux/post_install.sh"
-    ;;
-  *)
-    log_info "$OS has not post install process"
+  "ubuntu" | "elementary")
+    source "$DOTFILES_HOME/lib/ubuntu/post_install.sh"
 esac
 
 log_info "Finished setup."

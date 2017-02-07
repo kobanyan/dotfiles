@@ -1,6 +1,6 @@
 #!/bin/bash
 
-log_info "Start post install process to linux..."
+log_info "Start post install process to ubuntu..."
 
 if [ "$has_desktop" == "true" ]; then
   # recreate font cache
