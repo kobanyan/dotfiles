@@ -36,8 +36,8 @@ desktop_packages=[
   "libgconf-2-4",
 ]
 
-if ["ubuntu"].include?(os[:family])
-  if has_ubuntu_desktop then
+if is_ubuntu?
+  if has_desktop? then
     ppas.concat(desktop_ppas)
     packages.concat(desktop_packages)
   end
