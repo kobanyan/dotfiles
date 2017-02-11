@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILES_REPO="https://github.com/kobanyan/dotfiles"
-DOTFILES_HOME="$HOME/src/github.com/kobanyan/dotfiles"
+DOTFILES_HOME=${DOTFILES_HOME:-"$HOME/src/github.com/kobanyan/dotfiles"}
 
 REQUIRED_PACKAGES_OSX=(
   curl
