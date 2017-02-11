@@ -10,5 +10,6 @@ source "$DOTFILES_HOME/lib/apt.sh"
 if [ "$has_desktop" == "true" ]; then
   source "$DOTFILES_HOME/lib/fonts.sh"
   source "$DOTFILES_HOME/lib/ubuntu/umake.sh"
+  source "$DOTFILES_HOME/lib/ubuntu/code.sh"
   source "$DOTFILES_HOME/lib/code.sh"
 fi
