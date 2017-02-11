@@ -14,7 +14,7 @@ install:
   - gem install bundler
 script:
   - chmod 0755 ./bin/install.sh
-  - ./bin/install.sh
+  - DOTFILES_HOME=~/kobanyan/dotfiles ./bin/install.sh
   - cd test
   - bundle install
   - bundle exec rspec
