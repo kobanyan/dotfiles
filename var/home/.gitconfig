@@ -34,3 +34,5 @@
   unmerged = diff --name-only --diff-filter=U
 [core]
 	editor = vim
+[diff]
+	compactionHeuristic = true
