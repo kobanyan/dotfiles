@@ -15,4 +15,5 @@ CASKS=(
   visual-studio-code
   iterm2
   vagrant
+  hyperswitch
 )
