@@ -1,0 +1,11 @@
+set main-view = id date author commit-title:graph=yes,refs=yes
+
+bind main a ?git commit --amend --no-edit
+bind main u ?git reset --soft HEAD^
+
+bind branch f !git fetch -p
+bind branch n !git checkout -b %(prompt) %(branch)
+bind branch c !git checkout %(branch)
+bind branch p ?git push origin %(branch)
+bind branch d !git branch -d %(branch)
+

@@ -24,6 +24,7 @@ PACKAGES=(
   libncurses5-dev # pyenv
   xz-utils
   zip # ghr
+  tig
 )
 
 if [ "$has_desktop" == "true" ]; then
