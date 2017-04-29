@@ -6,6 +6,7 @@ bottles = [
   "fish",
   "vim",
   "tmux",
+  "tig",
 ]
 casks = [
   "google-chrome",
@@ -15,6 +16,7 @@ casks = [
   "visual-studio-code",
   "iterm2",
   "vagrant",
+  "hyperswitch"
 ]
 
 if os[:family] == "darwin"
