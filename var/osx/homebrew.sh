@@ -6,6 +6,7 @@ BOTTLES=(
   fish
   vim
   tmux
+  tig
 )
 CASKS=(
   google-chrome
