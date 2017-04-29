@@ -9,7 +9,6 @@ fisher_plugins = [
   "gitignore",
   "bullet-train-fish-theme",
   "ghr",
-  "gbs",
 ]
 fisher_plugins.each do |p|
   describe command("fish -c 'fisher ls | grep -q #{p}'") do
