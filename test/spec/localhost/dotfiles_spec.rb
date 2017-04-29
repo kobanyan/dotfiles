@@ -4,7 +4,8 @@ dotfiles=[
   ".config/fish/config.fish",
   ".editorconfig",
   ".gitconfig",
-  ".vimrc"
+  ".vimrc",
+  ".tigrc"
 ]
 
 dotfiles.each do |f|

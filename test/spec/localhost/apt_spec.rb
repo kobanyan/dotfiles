@@ -24,6 +24,7 @@ packages=[
   "libncurses5-dev",
   "xz-utils",
   "zip",
+  "tig",
 ]
 
 desktop_ppas=[
