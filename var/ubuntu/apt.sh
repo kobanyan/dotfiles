@@ -33,6 +33,6 @@ if [ "$has_desktop" == "true" ]; then
   PACKAGES+=(
     chromium-browser
     ubuntu-make
-    libgconf-2-4 # visual-studio-code
+    code
   )
 fi

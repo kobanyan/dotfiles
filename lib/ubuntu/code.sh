@@ -1,6 +1,7 @@
 #!/bin/bash
 
-log_info "Start making code symlink ..."
+log_info "Install the repository and key for visual-studio-code ..."
 
-mkdir -p "$HOME/.local/bin"
-ln -s "$HOME/.local/share/umake/ide/visual-studio-code/bin/code" "$HOME/.local/bin/code"
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
