@@ -9,8 +9,5 @@ set -x PATH "$HOME/.rbenv/bin" $PATH
 status --is-interactive;
   and source (rbenv init - | psub)
 
-# gbs
-set -g GBS_SELECTOR fzf
-
 # theme
 set -g BULLETTRAIN_NODEJS_SHOW true

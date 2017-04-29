@@ -8,5 +8,4 @@ set -g FISHER_PLUGINS \
   fzf \
   gitignore \
   kobanyan/bullet-train-fish-theme \
-  kobanyan/ghr \
-  kobanyan/gbs
+  kobanyan/ghr
