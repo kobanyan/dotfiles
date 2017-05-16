@@ -9,4 +9,5 @@ set -g FISHER_PLUGINS \
   gitignore \
   fishkit \
   kobanyan/bullet-train-fish-theme \
-  kobanyan/ghr
+  kobanyan/ghr \
+  kobanyan/pet-completions

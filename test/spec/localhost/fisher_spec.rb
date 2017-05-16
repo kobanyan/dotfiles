@@ -10,6 +10,7 @@ fisher_plugins = [
   "fishkit",
   "bullet-train-fish-theme",
   "ghr",
+  "pet-completions",
 ]
 fisher_plugins.each do |p|
   describe command("fish -c 'fisher ls | grep -q #{p}'") do
