@@ -7,5 +7,6 @@ set -g FISHER_PLUGINS \
   rbenv \
   fzf \
   gitignore \
+  fishkit \
   kobanyan/bullet-train-fish-theme \
   kobanyan/ghr
