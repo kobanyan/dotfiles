@@ -7,6 +7,7 @@ fisher_plugins = [
   "rbenv",
   "fzf",
   "gitignore",
+  "fishkit",
   "bullet-train-fish-theme",
   "ghr",
 ]
