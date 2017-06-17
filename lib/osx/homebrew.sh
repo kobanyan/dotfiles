@@ -14,7 +14,7 @@ fi
 
 # Install taps
 log_info "Installing homebrew taps..."
-for (( i = 0; i < ${#FONT_NAMES[@]}; ++i ));
+for (( i = 0; i < ${#TAPS[@]}; ++i ));
 do
   tap=${TAPS[$i]}
   log_info "Installing tap: $tap ..."
