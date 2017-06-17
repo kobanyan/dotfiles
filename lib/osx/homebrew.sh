@@ -12,6 +12,15 @@ else
   fi
 fi
 
+# Install taps
+log_info "Installing homebrew taps..."
+for (( i = 0; i < ${#FONT_NAMES[@]}; ++i ));
+do
+  tap=${TAPS[$i]}
+  log_info "Installing tap: $tap ..."
+  brew tap $tap
+done
+
 # Install bottles
 log_info "Installing homebrew bottles..."
 if [ ${#BOTTLES[@]} -gt 0 ]; then
