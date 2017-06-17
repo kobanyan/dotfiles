@@ -2,7 +2,6 @@ require "spec_helper"
 
 preferences = [
   "com.googlecode.iterm2.plist",
-  "org.pqrs.Karabiner.plist",
 ]
 
 if os[:family] == "darwin"

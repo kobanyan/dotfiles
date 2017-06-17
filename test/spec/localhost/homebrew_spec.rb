@@ -1,5 +1,7 @@
 require "spec_helper"
-
+taps = [
+  "jacobthemyth/jacobthemyth",
+]
 bottles = [
   "bash",
   "git",
@@ -11,7 +13,7 @@ bottles = [
 casks = [
   "google-chrome",
   "virtualbox",
-  "karabiner",
+  "wwwjfy-karabiner-elements",
   "docker-toolbox",
   "visual-studio-code",
   "iterm2",
@@ -22,6 +24,11 @@ casks = [
 if os[:family] == "darwin"
   describe command("brew --version") do
     its(:exit_status) { should eq 0 }
+  end
+  taps.each do |tap|
+    describe command("brew tap | grep -q #{tap}") do
+      its(:exit_status) { should eq 0}
+    end
   end
   bottles.each do |bottle|
     describe package(bottle) do
