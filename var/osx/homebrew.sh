@@ -1,7 +1,6 @@
 #!/bin/bash
 HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
 TAPS=(
-  jacobthemyth/jacobthemyth
 )
 BOTTLES=(
   bash
@@ -14,7 +13,7 @@ BOTTLES=(
 CASKS=(
   google-chrome
   virtualbox
-  wwwjfy-karabiner-elements
+  karabiner-elements
   docker-toolbox
   visual-studio-code
   iterm2

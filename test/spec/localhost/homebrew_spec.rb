@@ -1,6 +1,5 @@
 require "spec_helper"
 taps = [
-  "jacobthemyth/jacobthemyth",
 ]
 bottles = [
   "bash",
@@ -13,7 +12,7 @@ bottles = [
 casks = [
   "google-chrome",
   "virtualbox",
-  "wwwjfy-karabiner-elements",
+  "karabiner-elements",
   "docker-toolbox",
   "visual-studio-code",
   "iterm2",
