@@ -1,0 +1,4 @@
+[[snippets]]
+  description = "Create react application with typescript"
+  command = "create-react-app <name> --scripts-version=react-scripts-ts"
+  output = ""
