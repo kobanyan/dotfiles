@@ -13,7 +13,6 @@ REQUIRED_PACKAGES_UBUNTU=(
   curl
   git
   software-properties-common
-  python-software-properties
 )
 
 # -----------------------------------------------------------------------------
