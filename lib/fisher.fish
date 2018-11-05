@@ -6,4 +6,4 @@ source "$DOTFILES_HOME/var/fisher.fish"
 curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 # Install fisher plugins
-fisher install $FISHER_PLUGINS
+fisher add $FISHER_PLUGINS
