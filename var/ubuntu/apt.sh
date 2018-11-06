@@ -8,7 +8,7 @@ PACKAGES=(
   fish
   vim
   tmux
-  docker
+  docker-ce
   virtualbox
   vagrant
   make # pyenv
