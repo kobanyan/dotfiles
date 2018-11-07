@@ -1,13 +1,8 @@
-# pyenv
-set -x PATH "$HOME/.pyenv/bin" $PATH
-status --is-interactive;
-  and source (pyenv init - | psub);
-    and source (pyenv virtualenv-init - | psub)
+# asdf
+source ~/.asdf/asdf.fish
 
-# rbenv
-set -x PATH "$HOME/.rbenv/bin" $PATH
-status --is-interactive;
-  and source (rbenv init - | psub)
+# pipenv
+set -g PATH ~/.local/bin $PATH
 
 # theme
 set -g BULLETTRAIN_NODEJS_SHOW true

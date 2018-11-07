@@ -129,9 +129,7 @@ case "$OS" in
     exit 1
 esac
 
-source "$DOTFILES_HOME/lib/nvm.sh"
-source "$DOTFILES_HOME/lib/pyenv.sh"
-source "$DOTFILES_HOME/lib/rbenv.sh"
+source "$DOTFILES_HOME/lib/asdf.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
 source "$DOTFILES_HOME/lib/vim-plug.sh"
 source "$DOTFILES_HOME/lib/ghr.sh"
