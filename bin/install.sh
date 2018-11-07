@@ -115,6 +115,8 @@ log_info "Start to setup..."
 log_info "Cloning $DOTFILES_REPO to $DOTFILES_HOME"
 git_clone_or_pull $DOTFILES_REPO $DOTFILES_HOME
 
+source "$DOTFILES_HOME/lib/dotfiles.sh"
+
 case "$OS" in
   "osx")
     source "$DOTFILES_HOME/lib/osx/install.sh"
@@ -133,7 +135,6 @@ source "$DOTFILES_HOME/lib/rbenv.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
 source "$DOTFILES_HOME/lib/vim-plug.sh"
 source "$DOTFILES_HOME/lib/ghr.sh"
-source "$DOTFILES_HOME/lib/dotfiles.sh"
 
 case "$OS" in
   "ubuntu" | "elementary")
