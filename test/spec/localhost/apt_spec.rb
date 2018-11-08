@@ -8,9 +8,9 @@ packages=[
   "fish",
   "vim",
   "tmux",
+  "docker-ce",
   "virtualbox",
   "vagrant",
-  "docker",
   "make",
   "build-essential",
   "libssl-dev",
@@ -34,7 +34,7 @@ desktop_ppas=[
 desktop_packages=[
   "chromium-browser",
   "ubuntu-make",
-  "libgconf-2-4",
+  "code",
 ]
 
 if is_ubuntu?

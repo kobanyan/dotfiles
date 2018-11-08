@@ -1,16 +1,12 @@
 require "spec_helper"
 
 fisher_plugins = [
-  "z",
-  "nvm",
-  "pyenv",
-  "rbenv",
-  "fzf",
-  "gitignore",
-  "fishkit",
-  "bullet-train-fish-theme",
-  "ghr",
-  "pet-completions",
+  "jethrokuan/z",
+  "jethrokuan/fzf",
+  "sijad/gitignore",
+  "kobanyan/bullet-train-fish-theme",
+  "kobanyan/ghr",
+  "kobanyan/pet-completions",
 ]
 fisher_plugins.each do |p|
   describe command("fish -c 'fisher ls | grep -q #{p}'") do

@@ -2,7 +2,10 @@ require "spec_helper"
 
 dotfiles=[
   ".config/fish/config.fish",
+  ".config/fish/fishfile",
   ".config/karabiner/karabiner.json",
+  ".config/pet/config.toml",
+  ".config/pet/snippet.toml",
   ".editorconfig",
   ".gitconfig",
   ".vimrc",
