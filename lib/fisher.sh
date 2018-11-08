@@ -2,4 +2,8 @@
 
 log_info "Installing fisherman..."
 
-cat "${DOTFILES_HOME:?}/lib/fisher.fish" | DOTFILES_HOME=$DOTFILES_HOME fish
+# Install fisher
+curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+
+# Install fisher plugins
+fish -c fisher
