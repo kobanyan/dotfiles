@@ -5,4 +5,5 @@ GHRS=(
   "junegunn/fzf-bin -n fzf"
   "motemen/ghq"
   "stedolan/jq"
+  "antonmedv/fx"
 )

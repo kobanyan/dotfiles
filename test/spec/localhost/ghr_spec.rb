@@ -4,7 +4,8 @@ commands = [
   "peco --version",
   "fzf --version",
   "ghq --version",
-  "jq --version"
+  "jq --version",
+  "echo '{\"key\": \"value\"}' | fx .key"
 ]
 
 commands.each do |c|
