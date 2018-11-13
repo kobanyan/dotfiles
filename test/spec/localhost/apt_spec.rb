@@ -25,6 +25,7 @@ packages=[
   "xz-utils",
   "zip",
   "tig",
+  "net-tools",
 ]
 
 desktop_ppas=[

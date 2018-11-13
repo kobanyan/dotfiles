@@ -25,6 +25,7 @@ PACKAGES=(
   xz-utils
   zip # ghr
   tig
+  net-tools
 )
 
 if [ "$has_desktop" == "true" ]; then
