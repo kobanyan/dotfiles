@@ -1,22 +1,36 @@
 #!/bin/bash
-HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
+HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
 TAPS=(
 )
 BOTTLES=(
+  awscli
   bash
-  git
+  direnv
   fish
+  fx
+  fzf
+  gh
+  ghq
+  git
+  jq
+  peco
   vim
-  tmux
   tig
 )
 CASKS=(
+  android-studio
+  aws-vault
+  dbeaver-community
+  docker
   google-chrome
-  virtualbox
-  karabiner-elements
-  docker-toolbox
-  visual-studio-code
-  iterm2
-  vagrant
+  hyper
   hyperswitch
+  karabiner-elements
+  meld
+  nosql-workbench
+  postman
+  realforce
+  vagrant
+  virtualbox
+  visual-studio-code
 )

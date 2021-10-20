@@ -2,22 +2,36 @@ require "spec_helper"
 taps = [
 ]
 bottles = [
+  "awscli",
   "bash",
-  "git",
+  "direnv",
   "fish",
+  "fx",
+  "fzf",
+  "gh",
+  "ghq",
+  "git",
+  "jq",
+  "peco",
   "vim",
-  "tmux",
   "tig",
 ]
 casks = [
+  "android-studio",
+  "aws-vault",
+  "dbeaver-community",
+  "docker",
   "google-chrome",
-  "virtualbox",
+  "hyper",
+  "hyperswitch",
   "karabiner-elements",
-  "docker-toolbox",
-  "visual-studio-code",
-  "iterm2",
+  "meld",
+  "nosql-workbench",
+  "postman",
+  "realforce",
   "vagrant",
-  "hyperswitch"
+  "virtualbox",
+  "visual-studio-code",
 ]
 
 if os[:family] == "darwin"
@@ -35,7 +49,7 @@ if os[:family] == "darwin"
     end
   end
   casks.each do |cask|
-    describe command("brew cask list | grep -q #{cask}") do
+    describe command("brew list --cask | grep -q #{cask}") do
       its(:exit_status) { should eq 0 }
     end
   end

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-log_info "Install the repository and key for docker-ce ..."
+log_info "Installing docker ..."
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -csu) stable"
+bash -c "$(curl -fsSL https://get.docker.com)"

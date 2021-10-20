@@ -1,14 +1,10 @@
 #!/bin/bash
 
 PPAS=(
-  "ppa:fish-shell/release-2"
+  "ppa:fish-shell/release-3"
 )
 
 PACKAGES=(
-  fish
-  vim
-  tmux
-  docker-ce
   virtualbox
   vagrant
   make # pyenv
@@ -23,18 +19,13 @@ PACKAGES=(
   llvm # pyenv
   libncurses5-dev # pyenv
   xz-utils
-  zip # ghr
-  tig
   net-tools
 )
 
 if [ "$has_desktop" == "true" ]; then
-  PPAS+=(
-    "ppa:ubuntu-desktop/ubuntu-make"
-  )
   PACKAGES+=(
     chromium-browser
-    ubuntu-make
+    apt-transport-https # code
     code
   )
 fi
