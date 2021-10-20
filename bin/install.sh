@@ -12,6 +12,9 @@ REQUIRED_PACKAGES_UBUNTU=(
   curl
   git
   software-properties-common
+  build-essential
+  procps
+  file
 )
 
 # -----------------------------------------------------------------------------
@@ -131,7 +134,6 @@ esac
 source "$DOTFILES_HOME/lib/asdf.sh"
 source "$DOTFILES_HOME/lib/fisher.sh"
 source "$DOTFILES_HOME/lib/vim-plug.sh"
-source "$DOTFILES_HOME/lib/ghr.sh"
 
 case "$OS" in
   "ubuntu" | "elementary")

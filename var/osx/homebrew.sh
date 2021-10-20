@@ -6,9 +6,14 @@ BOTTLES=(
   awscli
   bash
   direnv
-  gh
-  git
   fish
+  fx
+  fzf
+  gh
+  ghq
+  git
+  jq
+  peco
   vim
   tig
 )
@@ -16,13 +21,15 @@ CASKS=(
   android-studio
   aws-vault
   dbeaver-community
+  docker
   google-chrome
   hyper
   hyperswitch
   karabiner-elements
   meld
-  nosql-workbench-for-amazon-dynamodb
+  nosql-workbench
   postman
+  realforce
   vagrant
   virtualbox
   visual-studio-code

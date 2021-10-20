@@ -5,8 +5,8 @@ fisher_plugins = [
   "jethrokuan/fzf",
   "sijad/gitignore",
   "kobanyan/bullet-train-fish-theme",
-  "kobanyan/ghr",
   "kobanyan/pet-completions",
+  "jorgebucaran/fisher",
 ]
 fisher_plugins.each do |p|
   describe command("fish -c 'fisher ls | grep -q #{p}'") do

@@ -5,8 +5,6 @@ PPAS=(
 )
 
 PACKAGES=(
-  fish
-  vim
   virtualbox
   vagrant
   make # pyenv
@@ -21,18 +19,12 @@ PACKAGES=(
   llvm # pyenv
   libncurses5-dev # pyenv
   xz-utils
-  zip # ghr
-  tig
   net-tools
 )
 
 if [ "$has_desktop" == "true" ]; then
-  PPAS+=(
-    "ppa:ubuntu-desktop/ubuntu-make"
-  )
   PACKAGES+=(
     chromium-browser
-    ubuntu-make
     apt-transport-https # code
     code
   )
