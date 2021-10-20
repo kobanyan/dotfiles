@@ -1,38 +1,62 @@
 [ghq]
 	root = ~/src
 [alias]
+  comit = commit
+  commmit = commit
   unstage = reset -q HEAD --
   discard = checkout --
   nevermind = !git reset --hard HEAD && git clean -d -f
   uncommit = reset --mixed HEAD~
   save = commit -m
-  resave = commit --amend
+  resave = commit --amend -m
+  fold = commit --amend --no-edit
   invert = revert
   last = log -1 HEAD --format=format:"%Cred%H"
+  copy-last-hash = !git last | pbcopy
   summary = status -u -s
   graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
-  history = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
-  branchout = checkout -b
+  history = log -10 --format=format:'%Cgreen%h %Creset%s (%aN, %ar)'
+  new-branch = checkout -b
+  rename-branch = branch -m
+  delete-branch = branch -D
+  branches = "!git branch | ag -v '\\b(staging|master)\\b'"
+  recent-branches = branch -a --sort=committerdate
   tags = tag
-  branches = branch -a
   stashes = stash list
+  prestage = diff -w
+  precommit = diff -w --cached
   remotes = remote -v
-  prestage = diff -w --word-diff=color
-  precommit = diff --cached -w --word-diff=color --word-diff-regex='[^[:space:]<>]+'
   move = mv
   remove = rm
   unmerged = branch --no-merged
   unstash = stash pop
-  what = show -w
+  what = show
+  show-last = show HEAD
   untrack = rm -r --cached
   rewrite = rebase -i
-  amend = commit --amend
   back = checkout "-"
   contributors = shortlog -s -n --no-merges
-  filetrail = log --follow -p -w
-  mergetrail = log --ancestry-path --merges
-  unmerged = diff --name-only --diff-filter=U
+  file-trail = log --follow -p -w
+  merge-trail = log --ancestry-path --merges
+  unmerged-files = diff --name-only
+  patch = add --patch
+  tuck = stash save -u
+  current-branch = rev-parse --abbrev-ref HEAD
+  untuck = stash pop "stash@{0}"
+  boop = "!f() { B=$(git current-branch); git commit --allow-empty -m 'Boop!'; git push origin $B; }; f"
+  aliases = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\:\\ /
+  autotrack = "!f() { B=$(git current-branch); git branch --set-upstream-to=origin/$B; }; f"
+  into = "!f() { B=$(git current-branch); git checkout $1; git pull; git merge $B --no-edit; }; f"
+  into-staging = "!f() { B=$(git current-branch); git checkout staging; git pull; git merge $B --no-edit; }; f"
+  into-master = "!f() { B=$(git current-branch); git checkout master; git pull; git merge $B --no-edit; }; f"
+  onto = "!f() { B=$(git current-branch); git checkout master; git pull; git checkout $B; git rebase -i $1; }; f"
+  work-log = !git log --reverse master...HEAD --format=format:'- %w(0,0,4)%B'
+  submit = !git push && git autotrack
+  whodunit = blame -wMC
+  axe = log --reverse -p -w -S
 [core]
 	editor = vim
 [diff]
 	compactionHeuristic = true
+[init]
+	defaultBranch = main

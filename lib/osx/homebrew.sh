@@ -32,7 +32,7 @@ fi
 # Install casks
 log_info "Installing homebrew cask bottles..."
 if [ ${#CASKS[@]} -gt 0 ]; then
-  brew cask install ${CASKS[*]}
+  brew install --cask ${CASKS[*]}
 else
   log_warn "There are no cask bottles."
 fi

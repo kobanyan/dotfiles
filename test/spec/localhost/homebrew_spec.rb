@@ -35,7 +35,7 @@ if os[:family] == "darwin"
     end
   end
   casks.each do |cask|
-    describe command("brew cask list | grep -q #{cask}") do
+    describe command("brew list --cask | grep -q #{cask}") do
       its(:exit_status) { should eq 0 }
     end
   end

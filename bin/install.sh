@@ -6,7 +6,6 @@ DOTFILES_HOME=${DOTFILES_HOME:-"$HOME/src/github.com/kobanyan/dotfiles"}
 REQUIRED_PACKAGES_OSX=(
   curl
   git
-  ruby
 )
 
 REQUIRED_PACKAGES_UBUNTU=(

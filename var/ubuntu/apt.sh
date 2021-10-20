@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PPAS=(
-  "ppa:fish-shell/release-2"
+  "ppa:fish-shell/release-3"
 )
 
 PACKAGES=(
