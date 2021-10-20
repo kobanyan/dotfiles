@@ -7,8 +7,6 @@ PPAS=(
 PACKAGES=(
   fish
   vim
-  tmux
-  docker-ce
   virtualbox
   vagrant
   make # pyenv
@@ -35,6 +33,7 @@ if [ "$has_desktop" == "true" ]; then
   PACKAGES+=(
     chromium-browser
     ubuntu-make
+    apt-transport-https # code
     code
   )
 fi
