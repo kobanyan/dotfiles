@@ -25,9 +25,9 @@ desktop_ppas=[
 ]
 
 desktop_packages=[
-  "chromium-browser",
   "apt-transport-https",
   "code",
+  "google-chrome-stable",
 ]
 
 if is_ubuntu?

@@ -10,6 +10,7 @@ else
     log_error "Failed to install homebrew."
     exit 1
   fi
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 

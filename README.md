@@ -1,5 +1,11 @@
 # dotfiles
 
+## PreInstall
+
+```bash
+sudo bash -c "echo '* - nofile 10240' >> /etc/security/limits.conf"
+```
+
 ## Install
 
 ```bash
