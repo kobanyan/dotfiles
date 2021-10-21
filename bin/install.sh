@@ -46,6 +46,10 @@ function git_clone_or_pull() {
   else
     git clone $1 $2
   fi
+  if [ -n "$BRANCH" ]; then
+    log_info "Use $BRANCH branch"
+    git checkout origin/$BRANCH
+  fi
 }
 
 function check_if_do_preinstall() {
