@@ -2,8 +2,6 @@
 
 log_info "Installing fisher..."
 
-# Install fisher
-fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+source "$DOTFILES_HOME/var/fisher.sh"
 
-# Install fisher plugins
-fish -c "fisher update"
+fish -c "curl -sL https://git.io/fisher | source && fisher install ${FISHER_PLUGINS[*]}"

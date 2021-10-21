@@ -2,7 +2,7 @@ require "spec_helper"
 
 dotfiles=[
   ".config/fish/config.fish",
-  ".config/fish/fishfile",
+  ".config/fish/fish_plugins",
   ".config/karabiner/karabiner.json",
   ".config/pet/config.toml",
   ".config/pet/snippet.toml",

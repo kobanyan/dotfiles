@@ -1,7 +1,6 @@
 #!/bin/bash
 
 PPAS=(
-  "ppa:fish-shell/release-3"
 )
 
 PACKAGES=(
@@ -24,7 +23,6 @@ PACKAGES=(
 
 if [ "$has_desktop" == "true" ]; then
   PACKAGES+=(
-    chromium-browser
     apt-transport-https # code
     code
   )

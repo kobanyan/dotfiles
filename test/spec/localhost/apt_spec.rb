@@ -1,14 +1,9 @@
 require "spec_helper"
 
 ppas=[
-  "fish-shell/release-2",
 ]
 
 packages=[
-  "fish",
-  "vim",
-  "tmux",
-  "docker-ce",
   "virtualbox",
   "vagrant",
   "make",
@@ -23,18 +18,15 @@ packages=[
   "llvm",
   "libncurses5-dev",
   "xz-utils",
-  "zip",
-  "tig",
   "net-tools",
 ]
 
 desktop_ppas=[
-  "ubuntu-desktop/ubuntu-make",
 ]
 
 desktop_packages=[
   "chromium-browser",
-  "ubuntu-make",
+  "apt-transport-https",
   "code",
 ]
 
