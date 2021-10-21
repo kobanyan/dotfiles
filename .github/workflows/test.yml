@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
@@ -20,9 +21,11 @@ jobs:
           DOTFILES_HOME: ~/kobanyan/dotfiles
         run: ./bin/install.sh
         shell: bash
+      - name: Set up Test
+        run: cd test
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Test
-        run: cd test && bundle exec rspec
+        run: bundle exec rspec
