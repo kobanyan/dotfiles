@@ -26,7 +26,7 @@ casks = [
   "hyperswitch",
   "karabiner-elements",
   "meld",
-  "nosql-workbench",
+  # "nosql-workbench",
   "postman",
   "realforce",
   "vagrant",
