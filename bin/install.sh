@@ -47,6 +47,10 @@ function git_clone_or_pull() {
     else
       git clone $1 $2
     fi
+    if [ -n "$BRANCH" ]; then
+      log_warn "Use $BRANCH branch"
+      git -C $2 checkout origin/$BRANCH
+    fi
   else
     log_warn "Skip clone/pull"
   fi

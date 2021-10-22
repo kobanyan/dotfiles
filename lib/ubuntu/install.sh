@@ -10,7 +10,6 @@ source "$DOTFILES_HOME/var/ubuntu/homebrew.sh"
 
 # setup repository
 if [ "$has_desktop" == "true" ]; then
-  source "$DOTFILES_HOME/lib/ubuntu/code.sh"
   source "$DOTFILES_HOME/lib/ubuntu/google-chrome.sh"
 fi
 

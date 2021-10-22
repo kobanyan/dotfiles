@@ -1,7 +1,7 @@
 #!/bin/bash
 log_info "Installing snap packages..."
 
-source "${DOTFILES_HOME:?}/var/snap.sh"
+source "${DOTFILES_HOME:?}/var/ubuntu/snap.sh"
 
 for (( i = 0; i < ${#SNAP_PACKAGES[@]}; ++i ))
 do
@@ -14,5 +14,5 @@ for (( i = 0; i < ${#SNAP_CLASSIC_PACKAGES[@]}; ++i ))
 do
   snap_classic_package=${SNAP_CLASSIC_PACKAGES[$i]}
   log_info "Installing snap classic package: $snap_classic_package ..."
-  sudo snap install $snap_classic_package --clasic
+  sudo snap install $snap_classic_package --classic
 done

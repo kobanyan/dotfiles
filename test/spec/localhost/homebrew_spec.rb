@@ -64,8 +64,8 @@ taps.each do |tap|
   end
 end
 bottles.each do |bottle|
-  describe package(bottle) do
-    it { should be_installed }
+  describe command("brew list | grep -q #{bottle}") do
+    its(:exit_status) { should eq 0}
   end
 end
 casks.each do |cask|

@@ -2,6 +2,11 @@
 
 log_info "Installing docker ..."
 
+if command -v docker > /dev/null 2>&1; then
+  log_warn "Skip installing docker. docker is already installed."
+  return
+fi
+
 bash -c "$(curl -fsSL https://get.docker.com)"
 
 log_info "Installing docker compose..."
