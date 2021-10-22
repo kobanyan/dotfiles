@@ -10,14 +10,21 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v2
-      - run:
-
-  # - chmod 0755 ./bin/install.sh
-  # - DOTFILES_HOME=~/kobanyan/dotfiles ./bin/install.sh
-  # - cd test
-  # - bundle install
-  # - bundle exec rspec
+      - name: Install
+        env:
+          DOTFILES_HOME: ./
+        run: ./bin/install.sh
+        shell: bash
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+      - name: Test
+        run: |
+          bundle install
+          bundle exec rspec
+        working-directory: ./test

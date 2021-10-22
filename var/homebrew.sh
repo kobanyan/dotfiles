@@ -1,0 +1,19 @@
+#!/bin/bash
+HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+TAPS=(
+)
+BOTTLES=(
+  awscli
+  direnv
+  fish
+  fx
+  fzf
+  gh
+  ghq
+  jq
+  peco
+  vim
+  tig
+)
+CASKS=(
+)

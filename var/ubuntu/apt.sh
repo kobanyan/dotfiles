@@ -23,8 +23,8 @@ PACKAGES=(
 
 if [ "$has_desktop" == "true" ]; then
   PACKAGES+=(
-    apt-transport-https # code
-    code
     google-chrome-stable
+    snapd
+    meld
   )
 fi

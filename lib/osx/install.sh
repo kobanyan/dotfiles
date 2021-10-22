@@ -4,6 +4,7 @@ log_info "Start install process to osx..."
 
 # include variables
 source "${DOTFILES_HOME:?}/var/osx/directories.sh"
+source "$DOTFILES_HOME/var/homebrew.sh"
 source "$DOTFILES_HOME/var/osx/homebrew.sh"
 
 # install

@@ -3,20 +3,32 @@ taps = [
 ]
 bottles = [
   "awscli",
-  "bash",
   "direnv",
   "fish",
   "fx",
   "fzf",
   "gh",
   "ghq",
-  "git",
   "jq",
   "peco",
   "vim",
   "tig",
 ]
 casks = [
+]
+ubuntu_bottles=[
+]
+ubuntu_taps=[
+]
+ubuntu_casks=[
+]
+osx_bottles=[
+  "bash",
+  "git",
+]
+osx_taps=[
+]
+osx_casks=[
   "android-studio",
   "aws-vault",
   "dbeaver-community",
@@ -26,31 +38,38 @@ casks = [
   "hyperswitch",
   "karabiner-elements",
   "meld",
-  "nosql-workbench",
+  # "nosql-workbench",
   "postman",
   "realforce",
   "vagrant",
   "virtualbox",
   "visual-studio-code",
 ]
+if is_ubuntu?
+  bottles.concat(ubuntu_bottles)
+  taps.concat(ubuntu_taps)
+  casks.concat(ubuntu_casks)
+elsif is_osx?
+  bottles.concat(osx_bottles)
+  taps.concat(osx_taps)
+  casks.concat(osx_casks)
+end
 
-if os[:family] == "darwin"
-  describe command("brew --version") do
+describe command("brew --version") do
+  its(:exit_status) { should eq 0 }
+end
+taps.each do |tap|
+  describe command("brew tap | grep -q #{tap}") do
+    its(:exit_status) { should eq 0}
+  end
+end
+bottles.each do |bottle|
+  describe command("brew list | grep -q #{bottle}") do
+    its(:exit_status) { should eq 0}
+  end
+end
+casks.each do |cask|
+  describe command("brew list --cask | grep -q #{cask}") do
     its(:exit_status) { should eq 0 }
-  end
-  taps.each do |tap|
-    describe command("brew tap | grep -q #{tap}") do
-      its(:exit_status) { should eq 0}
-    end
-  end
-  bottles.each do |bottle|
-    describe package(bottle) do
-      it { should be_installed }
-    end
-  end
-  casks.each do |cask|
-    describe command("brew list --cask | grep -q #{cask}") do
-      its(:exit_status) { should eq 0 }
-    end
   end
 end

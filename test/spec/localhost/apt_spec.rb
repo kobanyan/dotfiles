@@ -25,9 +25,9 @@ desktop_ppas=[
 ]
 
 desktop_packages=[
-  "apt-transport-https",
-  "code",
   "google-chrome-stable",
+  "snapd",
+  "meld",
 ]
 
 if is_ubuntu?

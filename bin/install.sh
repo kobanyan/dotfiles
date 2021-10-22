@@ -41,10 +41,18 @@ function log_error() {
 }
 
 function git_clone_or_pull() {
-  if [ -d "$2/.git" ] || git -C $2 rev-parse --git-dir >/dev/null 2>&1; then
-    git -C $2 pull
+  if [ -z "$CI" ]; then
+    if [ -d "$2/.git" ] || git -C $2 rev-parse --git-dir >/dev/null 2>&1; then
+      git -C $2 pull
+    else
+      git clone $1 $2
+    fi
+    if [ -n "$BRANCH" ]; then
+      log_warn "Use $BRANCH branch"
+      git -C $2 checkout origin/$BRANCH
+    fi
   else
-    git clone $1 $2
+    log_warn "Skip clone/pull"
   fi
 }
 
