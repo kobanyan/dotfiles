@@ -17,15 +17,14 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install
         env:
-          BRANCH: ${{ github.head_ref }}
-          DOTFILES_HOME: ~/kobanyan/dotfiles
+          DOTFILES_HOME: ./
         run: ./bin/install.sh
         shell: bash
-      - name: Set up Test
-        run: cd test
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+        working-directory: ./test
       - name: Test
         run: bundle exec rspec
+        working-directory: ./test
