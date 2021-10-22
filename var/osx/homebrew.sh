@@ -1,23 +1,11 @@
 #!/bin/bash
-HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
-TAPS=(
+TAPS+=(
 )
-BOTTLES=(
-  awscli
+BOTTLES+=(
   bash
-  direnv
-  fish
-  fx
-  fzf
-  gh
-  ghq
   git
-  jq
-  peco
-  vim
-  tig
 )
-CASKS=(
+CASKS+=(
   android-studio
   aws-vault
   dbeaver-community

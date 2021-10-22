@@ -4,7 +4,7 @@ fonts=[
  "RictyDiminished-Regular-Powerline.ttf",
 ]
 
-if os[:family] == "darwin"
+if is_osx?
   fonts.each do |f|
     describe file("/Library/Fonts/#{f}") do
       it { should be_file }
