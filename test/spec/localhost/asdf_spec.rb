@@ -16,6 +16,6 @@ describe command("fish -c 'source ~/.asdf/asdf.fish; and asdf current python | g
   its(:exit_status) { should eq 0 }
 end
 
-describe command("fish -c 'source ~/.asdf/asdf.fish; and pipenv --version'") do
+describe command("fish -c 'fish_add_path ~/.local/bin; and pipenv --version'") do
   its(:exit_status) { should eq 0 }
 end
