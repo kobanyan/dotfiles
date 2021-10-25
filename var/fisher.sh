@@ -3,6 +3,7 @@ FISHER_PLUGINS=(
   jethrokuan/z
   jethrokuan/fzf
   sijad/gitignore
-  kobanyan/bullet-train-fish-theme
+  IlanCosman/tide
+  kobanyan/tide-asdf-items
   kobanyan/pet-completions
 )

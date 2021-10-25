@@ -1,12 +1,12 @@
 require "spec_helper"
 
 fonts=[
- "RictyDiminished-Regular-Powerline.ttf",
+ "Ricty Diminished Regular Nerd Font Complete.ttf",
 ]
 
 if is_osx?
   fonts.each do |f|
-    describe file("/Library/Fonts/#{f}") do
+    describe file("#{ENV['HOME']}/Library/Fonts/#{f}") do
       it { should be_file }
     end
   end

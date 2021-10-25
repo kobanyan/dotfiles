@@ -5,7 +5,8 @@ source ~/.asdf/asdf.fish
 set PATH ~/.local/bin $PATH
 
 # theme
-set -g BULLETTRAIN_NODEJS_SHOW true
+set -U tide_left_prompt_items pwd git newline character
+set -U status cmd_duration context jobs asdf_nodejs asdf_ruby asdf_python asdf_golang time
 
 # americanhanko/fish-spin
 set -U XDG_CACHE_HOME $HOME/.cache
