@@ -2,15 +2,15 @@
 
 log_info "Installing asdf..."
 
-ASDF_HOME=~/.asdf
+ASDF_HOME=$HOME/.asdf
 if [ ! -d "$ASDF_HOME/.git" ]; then
   git clone https://github.com/asdf-vm/asdf.git $ASDF_HOME
 fi
 git -C $ASDF_HOME fetch -p
 git -C $ASDF_HOME checkout v0.8.1
 
-mkdir -p ~/.config/fish/completions
-ln -s $ASDF_HOME/completions/asdf.fish ~/.config/fish/completions
+mkdir -p $HOME/.config/fish/completions
+ln -s $ASDF_HOME/completions/asdf.fish $HOME/.config/fish/completions
 source $ASDF_HOME/asdf.sh
 
 # nodejs
