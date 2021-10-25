@@ -2,4 +2,5 @@
 TAPS+=(
 )
 BOTTLES+=(
+  aws-vault
 )

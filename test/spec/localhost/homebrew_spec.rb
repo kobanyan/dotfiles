@@ -4,6 +4,7 @@ taps = [
 bottles = [
   "awscli",
   "direnv",
+  "docker-completion"
   "fish",
   "fx",
   "fzf",
@@ -17,6 +18,7 @@ bottles = [
 casks = [
 ]
 ubuntu_bottles=[
+  "aws-vault",
 ]
 ubuntu_taps=[
 ]

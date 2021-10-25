@@ -1,9 +1,11 @@
 FISHER_PLUGINS=(
-  jorgebucaran/fisher
-  jethrokuan/z
-  jethrokuan/fzf
-  sijad/gitignore
+  decors/fish-ghq
   IlanCosman/tide
+  jethrokuan/fzf
+  jethrokuan/z
+  jorgebucaran/fisher
   kobanyan/tide-asdf-items
   kobanyan/pet-completions
+  laughedelic/pisces
+  sijad/gitignore
 )

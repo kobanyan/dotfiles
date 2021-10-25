@@ -5,6 +5,7 @@ TAPS=(
 BOTTLES=(
   awscli
   direnv
+  docker-completion
   fish
   fx
   fzf
