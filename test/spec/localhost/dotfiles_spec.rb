@@ -1,6 +1,7 @@
 require "spec_helper"
 
 dotfiles=[
+  ".config/direnv/direnvrc",
   ".config/fish/config.fish",
   ".config/karabiner/karabiner.json",
   ".config/pet/config.toml",

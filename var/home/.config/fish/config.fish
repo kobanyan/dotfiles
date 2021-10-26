@@ -2,6 +2,7 @@
 source ~/.asdf/asdf.fish
 
 # pipenv
+fish_add_path ~/.local/bin
 pipenv --completion | source
 
 # theme
@@ -9,7 +10,8 @@ set -U tide_left_prompt_items pwd git newline character
 set -U tide_right_prompt_items status cmd_duration context jobs asdf_nodejs asdf_ruby asdf_python asdf_golang time
 
 # direnv
-direnv hook fish | source
+asdf exec direnv hook fish | source
+alias direnv='asdf exec direnv'
 
 # andoid-studio
 if test -d ~/Library/Android/sdk

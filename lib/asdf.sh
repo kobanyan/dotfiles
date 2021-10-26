@@ -13,6 +13,10 @@ mkdir -p $HOME/.config/fish/completions
 ln -s $ASDF_HOME/completions/asdf.fish $HOME/.config/fish/completions
 source $ASDF_HOME/asdf.sh
 
+# direnv
+asdf plugin-add direnv
+asdf install direnv latest
+
 # nodejs
 asdf plugin-add nodejs
 bash $ASDF_HOME/plugins/nodejs/bin/import-release-team-keyring
