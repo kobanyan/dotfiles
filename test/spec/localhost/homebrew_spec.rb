@@ -12,6 +12,7 @@ bottles = [
   "ghq",
   "jq",
   "peco",
+  "pet",
   "vim",
   "tig",
 ]

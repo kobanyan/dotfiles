@@ -13,6 +13,7 @@ BOTTLES=(
   ghq
   jq
   peco
+  knqyf263/pet/pet
   vim
   tig
 )
