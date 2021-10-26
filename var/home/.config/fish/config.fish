@@ -1,5 +1,7 @@
 # asdf
-source ~/.asdf/asdf.fish
+# source ~/.asdf/asdf.fish
+fish_add_path ~/.asdf/bin
+source ~/.asdf/lib/asdf.fish # just load the asdf wrapper function
 
 # pipenv
 fish_add_path ~/.local/bin
