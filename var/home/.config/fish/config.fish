@@ -5,7 +5,6 @@ source ~/.asdf/lib/asdf.fish # just load the asdf wrapper function
 
 # pipenv
 fish_add_path ~/.local/bin
-pipenv --completion | source
 
 # theme
 set -U tide_left_prompt_items pwd git newline character
