@@ -5,6 +5,7 @@ TAPS=(
 BOTTLES=(
   awscli
   direnv
+  docker-completion
   fish
   fx
   fzf
@@ -12,8 +13,11 @@ BOTTLES=(
   ghq
   jq
   peco
-  vim
+  knqyf263/pet/pet
+  q
+  thefuck
   tig
+  vim
 )
 CASKS=(
 )

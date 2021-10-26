@@ -1,8 +1,12 @@
 FISHER_PLUGINS=(
-  jorgebucaran/fisher
-  jethrokuan/z
+  decors/fish-ghq
+  IlanCosman/tide
   jethrokuan/fzf
-  sijad/gitignore
-  kobanyan/bullet-train-fish-theme
+  jethrokuan/z
+  jorgebucaran/fisher
+  kobanyan/tide-asdf-items
   kobanyan/pet-completions
+  laughedelic/pisces
+  oh-my-fish/plugin-thefuck
+  sijad/gitignore
 )
