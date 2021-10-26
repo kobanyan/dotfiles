@@ -14,8 +14,10 @@ BOTTLES=(
   jq
   peco
   knqyf263/pet/pet
-  vim
+  q
+  thefuck
   tig
+  vim
 )
 CASKS=(
 )

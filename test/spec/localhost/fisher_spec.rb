@@ -9,6 +9,7 @@ fisher_plugins = [
   "kobanyan/tide-asdf-items",
   "kobanyan/pet-completions",
   "laughedelic/pisces",
+  "oh-my-fish/plugin-thefuck",
   "sijad/gitignore",
 ]
 fisher_plugins.each do |p|

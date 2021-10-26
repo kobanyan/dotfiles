@@ -13,8 +13,10 @@ bottles = [
   "jq",
   "peco",
   "pet",
-  "vim",
+  "q",
+  "thefuck",
   "tig",
+  "vim",
 ]
 casks = [
 ]
