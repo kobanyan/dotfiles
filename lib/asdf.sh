@@ -9,26 +9,29 @@ fi
 git -C $ASDF_HOME fetch -p
 git -C $ASDF_HOME checkout v0.8.1
 
-mkdir -p $HOME/.config/fish/completions
-ln -s $ASDF_HOME/completions/asdf.fish $HOME/.config/fish/completions
+if [ ! -e "$HOME/.config/fish/completions/asdf.fish" ]; then
+  mkdir -p $HOME/.config/fish/completions
+  ln -s $ASDF_HOME/completions/asdf.fish $HOME/.config/fish/completions
+fi
 source $ASDF_HOME/asdf.sh
 
-# direnv
+log_info "Installing direnv..."
 asdf plugin-add direnv
 asdf install direnv latest
+asdf global direnv latest
 
-# nodejs
+log_info "Installing nodejs..."
 asdf plugin-add nodejs
 bash $ASDF_HOME/plugins/nodejs/bin/import-release-team-keyring
 asdf install nodejs 14.17.2
 asdf global nodejs 14.17.2
 
-# ruby
+log_info "Installing ruby..."
 asdf plugin-add ruby
 asdf install ruby 3.0.2
 asdf global ruby 3.0.2
 
-# python
+log_info "Installing python..."
 # https://pipenv-ja.readthedocs.io/ja/translate-ja/install.html#installing-pipenv
 asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
 asdf install python 3.9.7
