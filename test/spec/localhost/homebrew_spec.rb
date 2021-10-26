@@ -4,7 +4,7 @@ taps = [
 bottles = [
   "awscli",
   "direnv",
-  "docker-completion"
+  "docker-completion",
   "fish",
   "fx",
   "fzf",
