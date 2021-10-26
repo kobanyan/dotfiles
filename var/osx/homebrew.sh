@@ -9,7 +9,6 @@ CASKS+=(
   android-studio
   aws-vault
   dbeaver-community
-  docker
   google-chrome
   hyper
   hyperswitch
@@ -21,4 +20,6 @@ CASKS+=(
   vagrant
   virtualbox
   visual-studio-code
+  # docker should be last. if other docker exists, throw error
+  docker
 )
