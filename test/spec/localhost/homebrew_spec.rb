@@ -2,6 +2,7 @@ require "spec_helper"
 taps = [
 ]
 bottles = [
+  "asdf",
   "awscli",
   "docker-completion",
   "fish",
