@@ -8,4 +8,4 @@ use_aws_profile(){
 }
 
 # Uncomment the following line to make direnv silent by default.
-# export DIRENV_LOG_FORMAT=""
+export DIRENV_LOG_FORMAT=""
