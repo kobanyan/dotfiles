@@ -12,6 +12,12 @@ dotfiles=[
   ".vimrc",
   ".tigrc"
 ]
+osx_dotfiles=[
+  ".hyper.js"
+]
+if is_osx?
+  dotfiles.concat(osx_dotfiles)
+end
 
 dotfiles.each do |f|
   describe file("#{ENV['HOME']}/#{f}") do
