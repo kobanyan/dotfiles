@@ -8,6 +8,7 @@ source "$DOTFILES_HOME/var/homebrew.sh"
 source "$DOTFILES_HOME/var/osx/homebrew.sh"
 
 # install
+source "$DOTFILES_HOME/lib/osx/dotfiles.sh"
 source "$DOTFILES_HOME/lib/osx/homebrew.sh"
 source "$DOTFILES_HOME/lib/osx/defaults.sh"
 source "$DOTFILES_HOME/lib/osx/preferences.sh"
