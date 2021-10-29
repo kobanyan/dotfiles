@@ -7,6 +7,7 @@ dotfiles=[
   ".config/pet/config.toml",
   ".config/pet/snippet.toml",
   ".editorconfig",
+  ".envrc",
   ".gitconfig",
   ".vimrc",
   ".tigrc"
