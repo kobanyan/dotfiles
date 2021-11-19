@@ -5,7 +5,7 @@ TAPS=(
 BOTTLES=(
   asdf
   awscli
-  docker-completion
+  # docker-completion
   fish
   fx
   fzf

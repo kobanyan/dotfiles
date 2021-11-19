@@ -13,6 +13,7 @@ dotfiles=[
   ".tigrc"
 ]
 osx_dotfiles=[
+  ".config/fish/conf.d/0-env.fish",
   ".hyper.js"
 ]
 if is_osx?

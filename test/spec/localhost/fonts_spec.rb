@@ -1,7 +1,7 @@
 require "spec_helper"
 
 fonts=[
-  "Ricty Diminished Regular for Powerline",
+  "Ricty Diminished Regular for Powerline.ttf",
   "Ricty Diminished Regular Nerd Font Complete.ttf",
 ]
 

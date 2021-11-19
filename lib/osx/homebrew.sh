@@ -10,6 +10,8 @@ else
     log_error "Failed to install homebrew."
     exit 1
   fi
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Install taps
