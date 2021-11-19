@@ -4,7 +4,7 @@ taps = [
 bottles = [
   "asdf",
   "awscli",
-  "docker-completion",
+  # "docker-completion",
   "fish",
   "fx",
   "fzf",
@@ -30,6 +30,8 @@ ubuntu_casks=[
 osx_bottles=[
   "bash",
   "git",
+  "gpg",
+  "qemu",
 ]
 osx_taps=[
 ]
@@ -47,7 +49,8 @@ osx_casks=[
   "postman",
   "realforce",
   "vagrant",
-  "virtualbox",
+  # "virtualbox",
+  "utm",
   "visual-studio-code",
 ]
 if is_ubuntu?

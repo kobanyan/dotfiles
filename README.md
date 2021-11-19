@@ -2,8 +2,15 @@
 
 ## PreInstall
 
+### ubuntu
+
 ```bash
 sudo bash -c "echo '* - nofile 10240' >> /etc/security/limits.conf"
+```
+
+### osx
+```bash
+sudo softwareupdate --install-rosetta
 ```
 
 ## Install

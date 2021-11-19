@@ -4,6 +4,8 @@ TAPS+=(
 BOTTLES+=(
   bash
   git
+  gpg
+  qemu
 )
 CASKS+=(
   android-studio
@@ -18,7 +20,8 @@ CASKS+=(
   postman
   realforce
   vagrant
-  virtualbox
+  # virtualbox
+  utm
   visual-studio-code
   # docker should be last. if other docker exists, throw error
   docker
